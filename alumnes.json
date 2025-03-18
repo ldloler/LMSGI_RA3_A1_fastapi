@@ -1,0 +1,67 @@
+[
+    {
+        "id": 0,
+        "nom": "Marc",
+        "cognom": "Bertran",
+        "data": {
+            "dia": 20,
+            "mes": 7,
+            "any": 2004
+        },
+        "email": "marcb@marcb.cat",
+        "feina": false,
+        "curs": "DAM1"
+    },
+    {
+        "id": 1,
+        "nom": "Sara",
+        "cognom": "Herraiz",
+        "data": {
+            "dia": 12,
+            "mes": 3,
+            "any": 2004
+        },
+        "email": "sarah@sarah.cat",
+        "feina": true,
+        "curs": "DAM1"
+    },
+    {
+        "id": 2,
+        "nom": "Pau",
+        "cognom": "Gilard",
+        "data": {
+            "dia": 1,
+            "mes": 9,
+            "any": 2004
+        },
+        "email": "paug@paug.cat",
+        "feina": true,
+        "curs": "DAM1"
+    },
+    {
+        "id": 3,
+        "nom": "Nuria",
+        "cognom": "Margarit",
+        "data": {
+            "dia": 15,
+            "mes": 10,
+            "any": 2005
+        },
+        "email": "nuriam@nuriam.cat",
+        "feina": true,
+        "curs": "DAM1"
+    },
+    {
+        "id": 4,
+        "nom": "Carla",
+        "cognom": "Zulter",
+        "data": {
+            "dia": 25,
+            "mes": 11,
+            "any": 2003
+        },
+        "email": "carlaz@carlaz.cat",
+        "feina": true,
+        "curs": "Relacions publiques"
+    }
+]
