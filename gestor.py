@@ -21,14 +21,12 @@ def desar(dic: list[dict]):
     return "Desat correctament"
 
 # Mostra l'id, el nom i el cognom de tots els alumnes.
-def mostra_tots():
-    alumnes = llegir()
+def mostra_tots(alumnes: list[dict]):
     for alumne in alumnes:
         print(alumne["id"], alumne["nom"], alumne["cognom"])
 
 # Crea un dict d'alumne amb les dades que s'han passat. I l'afageix al fitxer
-def afegir_alumne(nom: str, cognom: str, dia: int, mes: int, any: int, email: str, feina: bool, curs: str):
-    alumnes = llegir()
+def afegir_alumne(alumnes: list[dict], nom: str, cognom: str, dia: int, mes: int, any: int, email: str, feina: bool, curs: str):
     id = alumnes[len(alumnes) - 1]["id"] + 1
     alumne = {
         "id": id,
@@ -48,16 +46,14 @@ def afegir_alumne(nom: str, cognom: str, dia: int, mes: int, any: int, email: st
     return "Alumne afegit"
 
 # Retorna tots els detalls d'un alumne segons l'id.
-def veure_alumne(id: int):
-    alumnes = llegir()
+def veure_alumne(alumnes: list[dict], id: int):
     for alumne in alumnes:
         if alumne["id"] == id:
             return alumne
     return "L'alumne amb id: {} no existeix".format(id)
 
 # Esborra un alumne segons l'id
-def esborra(id: int):
-    alumnes = llegir()
+def esborra(alumnes: list[dict], id: int):
     for alumne in alumnes:
         if alumne["id"] == id:
             i = alumnes.index(alumne)
@@ -94,6 +90,9 @@ def menu():
 
 ### Programa ################################################
 
+# Llista d'Alumnes
+alumnes = []
+
 # Fins a l'infinit (i més enllà)
 while True:
 
@@ -106,7 +105,7 @@ while True:
             print("Mostrar alumnes")
             print("-------------------------------")
 
-            mostra_tots()
+            mostra_tots(alumnes)
 
             input()
 
@@ -117,7 +116,7 @@ while True:
             print("-------------------------------")
             print("Afegeix les dades de l'alumne")
 
-            print(afegir_alumne(
+            print(afegir_alumne(alumnes,
                 input("nom: "),
                 input("cognom: "),
                 int(input("dia: ")),
@@ -137,7 +136,7 @@ while True:
             print("-------------------------------")
             print("Quin alumne vols veure?")
 
-            print(veure_alumne(
+            print(veure_alumne(alumnes,
                 int(input("id: "))
             ))
 
@@ -150,7 +149,7 @@ while True:
             print("-------------------------------")
             print("Quin alumne vols eliminar?")
 
-            print(esborra(
+            print(esborra(alumnes,
                 int(input("id: "))
             ))
 
@@ -163,7 +162,7 @@ while True:
             print("-------------------------------")
 
             print(desar(
-                llegir()
+                alumnes
             ))
 
             input()
@@ -174,7 +173,8 @@ while True:
             print("Llegir fitxer")
             print("-------------------------------")
 
-            print(llegir())
+            alumnes = llegir()
+            print("S'ha llegit el fitxer")
 
             input()
 
